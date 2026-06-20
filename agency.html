@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency | 14+ Year Legacy | Visual Integra</title>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: ['class', '[data-theme="dark"]'],
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            plum: 'var(--brand-plum)',
+                            'plum-light': 'var(--brand-plum-light)',
+                            teal: 'var(--brand-teal)',
+                            lime: 'var(--brand-lime)',
+                            black: 'var(--brand-black)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+    <div class="liquid-bg"></div>
+    <div id="scroll-progress" style="width: 0%"></div>
+
+    <!-- NAVIGATION -->
+    <header id="navbar" class="fixed top-0 w-full z-50 glass-effect border-b border-slate-100/10 transition-all duration-500">
+        <div class="container py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center group">
+                <img src="assets/Visual Integra Logo.jpg" alt="Visual Integra Logo" class="h-20 w-auto object-contain transition-transform group-hover:scale-105" />
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10">
+                <a href="expertise.html" class="nav-link">Expertise</a>
+                <a href="aibi.html" class="nav-link">AI-BI</a>
+                <a href="industries.html" class="nav-link">Industries</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="agency.html" class="nav-link nav-active">Agency</a>
+                <div class="flex items-center gap-6 border-l border-slate-200/20 pl-8 ml-4">
+                    <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon"></button>
+                    <button onclick="window.location.href='contact.html'" class="btn-primary !py-2.5 !px-6 !text-[10px]">Connect</button>
+                </div>
+            </nav>
+            <button class="lg:hidden p-2 text-brand-black dark:text-white" onclick="toggleMobileMenu()">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white dark:bg-[#0B0F1A] h-screen p-10 flex flex-col space-y-8 text-4xl font-black text-brand-black dark:text-white lg:hidden overflow-y-auto">
+            <a href="expertise.html">Expertise</a>
+            <a href="aibi.html">AI-BI</a>
+            <a href="industries.html">Industries</a>
+            <a href="products.html">Products</a>
+            <a href="agency.html" class="nav-active">Agency</a>
+            <a href="contact.html" class="text-brand-lime">Connect →</a>
+        </div>
+    </header>
+
+    <section class="hero-section container fade-up">
+        <div class="grid lg:grid-cols-[1.3fr_0.7fr] gap-16 items-center">
+            <div>
+                <span class="stat-badge">14+ Year Legacy</span>
+                <h1 class="hero-title">Visual Integra <br><span class="hero-title-highlight">Depth.</span></h1>
+                <p class="text-body-lg mt-10 mb-12 max-w-xl">Founded in 2010 by senior consultants with a vision for industrialized digital excellence and precision engineering.</p>
+                <div class="flex flex-wrap gap-6 items-center">
+                    <button onclick="window.location.href='contact.html'" class="btn-primary">Connect with Agency</button>
+                    <button onclick="window.location.href='expertise.html'" class="btn-tertiary">Our Methodology →</button>
+                </div>
+            </div>
+            <div class="hidden lg:block relative">
+                <div class="hero-image-container">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" alt="Agency Office" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container pt-0">
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="bento-card glass-effect">
+                <div class="text-7xl font-black text-brand-plum mb-4 tracking-tighter">1,000+</div>
+                <span class="text-label">Consulting Hours Logged</span>
+            </div>
+            <div class="bento-card glass-effect">
+                <div class="text-7xl font-black text-brand-teal mb-4 tracking-tighter">20+</div>
+                <span class="text-label">Global Projects Delivered</span>
+            </div>
+            <div class="bento-card glass-effect">
+                <div class="text-7xl font-black text-brand-lime mb-4 tracking-tighter">2010</div>
+                <span class="text-label">Year of Inception</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (GLOBAL STANDARD) -->
+    <footer class="site-footer pt-20 pb-12">
+        <div class="container">
+            <div class="grid lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <img src="assets/Visual Integra Logo.jpg" alt="Visual Integra Logo" class="h-20 w-auto object-contain mb-8" />
+                    <p class="text-lg text-slate-400 max-w-sm font-medium leading-relaxed">
+                        Microsoft Technology Leader specializing in global intelligence and digital engineering for the modern enterprise.
+                    </p>
+                </div>
+                <div>
+                    <span class="footer-label mb-8 block">Navigation</span>
+                    <ul class="space-y-4 font-bold text-slate-300 text-sm">
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="aibi.html">AI-BI Solutions</a></li>
+                        <li><a href="expertise.html">BI Lifecycle</a></li>
+                        <li><a href="products.html">Proprietary Stack</a></li>
+                        <li><a href="agency.html">Agency</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="footer-label mb-8 block">Global Hubs</span>
+                    <ul class="space-y-4 font-bold text-slate-300 text-sm">
+                        <li>Johannesburg, SA</li>
+                        <li>Hyderabad, IN</li>
+                        <li>Coventry, UK</li>
+                        <li>Delaware, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-8">
+                <span class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">© 2026 Visual Integra Technologies. All Rights Reserved.</span>
+                <div class="flex gap-10 text-[11px] font-black uppercase tracking-widest text-slate-500">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
