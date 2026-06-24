@@ -47,15 +47,19 @@
                 <a href="aibi.html" class="nav-link">AI-BI</a>
                 <a href="industries.html" class="nav-link nav-active">Industries</a>
                 <a href="products.html" class="nav-link">Products</a>
-                <a href="agency.html" class="nav-link">Agency</a>
+                <a href="clients.html" class="nav-link">Clients</a>
+                <a href="about.html" class="nav-link">About Us</a>
                 <div class="flex items-center gap-6 border-l border-slate-200/20 pl-8 ml-4">
                     <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon"></button>
                     <button onclick="window.location.href='contact.html'" class="btn-primary !py-2.5 !px-6 !text-[10px]">Connect</button>
                 </div>
             </nav>
-            <button class="lg:hidden p-2 text-brand-black dark:text-white" onclick="toggleMobileMenu()">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
+            <div class="flex lg:hidden items-center gap-4">
+                <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon-mobile"></button>
+                <button class="p-2 text-brand-black dark:text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
         </div>
 
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white dark:bg-[#0B0F1A] h-screen p-10 flex flex-col space-y-8 text-4xl font-black text-brand-black dark:text-white lg:hidden overflow-y-auto">
@@ -63,28 +67,18 @@
             <a href="aibi.html">AI-BI</a>
             <a href="industries.html" class="nav-active">Industries</a>
             <a href="products.html">Products</a>
-            <a href="agency.html">Agency</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html">About Us</a>
             <a href="contact.html" class="text-brand-lime">Connect →</a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero-section container fade-up">
-        <div class="grid lg:grid-cols-[1.4fr_0.6fr] gap-16 items-center">
-            <div>
-                <span class="stat-badge">Sector Expertise</span>
-                <h1 class="hero-title">Industries We <br><span class="hero-title-highlight">Empower.</span></h1>
-                <p class="text-body-lg mt-10 mb-12 max-w-xl">Precision solutions designed to help organizations build their "Firm of the Future" through digital transformation.</p>
-                <div class="flex flex-wrap gap-8 items-center">
-                    <button onclick="window.location.href='contact.html'" class="btn-primary">Connect with Experts</button>
-                    <button onclick="window.location.href='expertise.html'" class="btn-tertiary">Explore Lifecycle →</button>
-                </div>
-            </div>
-            <div class="hidden lg:block relative">
-                <div class="hero-image-container">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" alt="Industry" />
-                </div>
-            </div>
+    <section class="inner-header-section container fade-up">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="stat-badge mb-4">Sector Expertise</span>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-brand-black dark:text-white">Industries We <span class="text-brand-plum dark:text-brand-lime">Empower.</span></h1>
+            <p class="text-lg text-muted dark:text-slate-400 max-w-2xl mx-auto">Precision solutions designed to help organizations build their "Firm of the Future" through digital transformation.</p>
         </div>
     </section>
 
@@ -131,11 +125,12 @@
                 <div>
                     <span class="footer-label mb-8 block">Navigation</span>
                     <ul class="space-y-4 font-bold text-slate-300 text-sm">
-                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="expertise.html">Expertise</a></li>
                         <li><a href="aibi.html">AI-BI Solutions</a></li>
-                        <li><a href="expertise.html">BI Lifecycle</a></li>
+                        <li><a href="industries.html">Industries</a></li>
                         <li><a href="products.html">Proprietary Stack</a></li>
-                        <li><a href="agency.html">Agency</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="about.html">About Us</a></li>
                     </ul>
                 </div>
                 <div>

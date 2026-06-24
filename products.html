@@ -46,15 +46,19 @@
                 <a href="aibi.html" class="nav-link">AI-BI</a>
                 <a href="industries.html" class="nav-link">Industries</a>
                 <a href="products.html" class="nav-link nav-active">Products</a>
-                <a href="agency.html" class="nav-link">Agency</a>
+                <a href="clients.html" class="nav-link">Clients</a>
+                <a href="about.html" class="nav-link">About Us</a>
                 <div class="flex items-center gap-6 border-l border-slate-200/20 pl-8 ml-4">
                     <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon"></button>
                     <button onclick="window.location.href='contact.html'" class="btn-primary !py-2.5 !px-6 !text-[10px]">Connect</button>
                 </div>
             </nav>
-            <button class="lg:hidden p-2 text-brand-black dark:text-white" onclick="toggleMobileMenu()">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
+            <div class="flex lg:hidden items-center gap-4">
+                <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon-mobile"></button>
+                <button class="p-2 text-brand-black dark:text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
         </div>
 
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white dark:bg-[#0B0F1A] h-screen p-10 flex flex-col space-y-8 text-4xl font-black text-brand-black dark:text-white lg:hidden overflow-y-auto">
@@ -62,45 +66,63 @@
             <a href="aibi.html">AI-BI</a>
             <a href="industries.html">Industries</a>
             <a href="products.html" class="nav-active">Products</a>
-            <a href="agency.html">Agency</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html">About Us</a>
             <a href="contact.html" class="text-brand-lime">Connect →</a>
         </div>
     </header>
 
-    <section class="hero-section container fade-up">
-        <div class="grid lg:grid-cols-[1.3fr_0.7fr] gap-16 items-center">
-            <div>
-                <span class="stat-badge">Proprietary Stack</span>
-                <h1 class="hero-title">Logic <br><span class="hero-title-highlight">Frameworks.</span></h1>
-                <p class="text-body-lg mt-10 mb-12 max-w-xl">Enterprise infrastructure engineered since 2010. Robust solutions for digital-first global leaders and technical pioneers.</p>
-                <div class="flex flex-wrap gap-8 items-center">
-                    <button onclick="window.location.href='contact.html'" class="btn-primary">Inquire Deployment</button>
-                </div>
-            </div>
-            <div class="hidden lg:block relative">
-                <div class="hero-image-container">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200" alt="Security" />
-                </div>
-            </div>
+    <section class="inner-header-section container fade-up">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="stat-badge mb-4">Proprietary Stack</span>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-brand-black dark:text-white">Logic <span class="text-brand-plum dark:text-brand-lime">Frameworks.</span></h1>
+            <p class="text-lg text-muted dark:text-slate-400 max-w-2xl mx-auto">Enterprise infrastructure engineered since 2010. Robust solutions for digital-first global leaders and technical pioneers.</p>
         </div>
     </section>
 
     <section class="container pt-0">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- 1. VI BI Intelligence -->
             <div class="bento-card glass-effect">
                 <div class="icon-box c-indigo"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2" stroke-width="2.5"></path></svg></div>
-                <h4 class="text-2xl font-black mb-4 tracking-tighter">VI BI Intelligence</h4>
-                <p class="font-medium text-muted mb-8">Analytics designed to improve decision making and cut costs through deep sector intelligence.</p>
+                <h4 class="text-2xl font-black mb-4 tracking-tighter">VI BI Solutions</h4>
+                <p class="font-medium text-muted mb-8">Advanced analytics designed to improve corporate decision-making, optimize budgets, and surface market opportunities.</p>
             </div>
+            <!-- 2. BB Application -->
+            <div class="bento-card glass-effect">
+                <div class="icon-box c-violet"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16" stroke-width="2.5"></path></svg></div>
+                <h4 class="text-2xl font-black mb-4 tracking-tighter">BB Application</h4>
+                <p class="font-medium text-muted mb-8">Secure enterprise integration portals built to manage transaction workflows and corporate banking interfaces.</p>
+            </div>
+            <!-- 3. iOS Apps -->
+            <div class="bento-card glass-effect">
+                <div class="icon-box c-sky"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                <h4 class="text-2xl font-black mb-4 tracking-tighter">iOS Applications</h4>
+                <p class="font-medium text-muted mb-8">High-performance mobile utilities and applications engineered natively for seamless Apple ecosystems.</p>
+            </div>
+            <!-- 4. VI Group Service Application -->
+            <div class="bento-card glass-effect">
+                <div class="icon-box c-emerald"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-3c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-3c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                <h4 class="text-2xl font-black mb-4 tracking-tighter">Group Service App</h4>
+                <p class="font-medium text-muted mb-8">Centralized cross-department workflow dispatch and service management utility for global organizations.</p>
+            </div>
+            <!-- 5. VI Map Management -->
+            <div class="bento-card glass-effect">
+                <div class="icon-box c-amber"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 4L9 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                <h4 class="text-2xl font-black mb-4 tracking-tighter">Map Management</h4>
+                <p class="font-medium text-muted mb-8">Location intelligence and spatial database platforms to process, display, and manage geographical data.</p>
+            </div>
+            <!-- 6. VI POS System -->
+            <div class="bento-card glass-effect">
+                <div class="icon-box c-lime"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-width="2.5"></path></svg></div>
+                <h4 class="text-2xl font-black mb-4 tracking-tighter">VI POS System</h4>
+                <p class="font-medium text-muted mb-8">Omnichannel retail point of sale with real-time inventory tracking, local caching, and auditing tools.</p>
+            </div>
+            <!-- 7. Medcare247 -->
             <div class="bento-card glass-effect">
                 <div class="icon-box c-rose"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7" stroke-width="2.5"></path></svg></div>
                 <h4 class="text-2xl font-black mb-4 tracking-tighter">Medcare247</h4>
-                <p class="font-medium text-muted mb-8">Integrated healthcare management providing 24/7 connectivity for clinical staff and patients.</p>
-            </div>
-            <div class="bento-card glass-effect">
-                <div class="icon-box c-amber"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-width="2.5"></path></svg></div>
-                <h4 class="text-2xl font-black mb-4 tracking-tighter">VI POS System</h4>
-                <p class="font-medium text-muted mb-8">Omnichannel retail point of sale with deep inventory tracking and integrated auditing.</p>
+                <p class="font-medium text-muted mb-8">Integrated clinical platform providing 24/7 mobile and desktop database access for staff and patients.</p>
             </div>
         </div>
     </section>
@@ -118,11 +140,12 @@
                 <div>
                     <span class="footer-label mb-8 block">Navigation</span>
                     <ul class="space-y-4 font-bold text-slate-300 text-sm">
-                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="expertise.html">Expertise</a></li>
                         <li><a href="aibi.html">AI-BI Solutions</a></li>
-                        <li><a href="expertise.html">BI Lifecycle</a></li>
+                        <li><a href="industries.html">Industries</a></li>
                         <li><a href="products.html">Proprietary Stack</a></li>
-                        <li><a href="agency.html">Agency</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="about.html">About Us</a></li>
                     </ul>
                 </div>
                 <div>

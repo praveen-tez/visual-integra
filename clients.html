@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients | Corporate Partners | Visual Integra</title>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: ['class', '[data-theme="dark"]'],
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            plum: 'var(--brand-plum)',
+                            'plum-light': 'var(--brand-plum-light)',
+                            teal: 'var(--brand-teal)',
+                            lime: 'var(--brand-lime)',
+                            black: 'var(--brand-black)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+    <div class="liquid-bg"></div>
+    <div id="scroll-progress" style="width: 0%"></div>
+
+    <!-- NAVIGATION -->
+    <header id="navbar" class="fixed top-0 w-full z-50 glass-effect border-b border-slate-100/10 transition-all duration-500">
+        <div class="container py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center group">
+                <img src="assets/Visual Integra Logo.jpg" alt="Visual Integra Logo" class="h-20 w-auto object-contain transition-transform group-hover:scale-105" />
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10">
+                <a href="expertise.html" class="nav-link">Expertise</a>
+                <a href="aibi.html" class="nav-link">AI-BI</a>
+                <a href="industries.html" class="nav-link">Industries</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="clients.html" class="nav-link nav-active">Clients</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <div class="flex items-center gap-6 border-l border-slate-200/20 pl-8 ml-4">
+                    <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon"></button>
+                    <button onclick="window.location.href='contact.html'" class="btn-primary !py-2.5 !px-6 !text-[10px]">Connect</button>
+                </div>
+            </nav>
+            <div class="flex lg:hidden items-center gap-4">
+                <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon-mobile"></button>
+                <button class="p-2 text-brand-black dark:text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white dark:bg-[#0B0F1A] h-screen p-10 flex flex-col space-y-8 text-4xl font-black text-brand-black dark:text-white lg:hidden overflow-y-auto">
+            <a href="expertise.html">Expertise</a>
+            <a href="aibi.html">AI-BI</a>
+            <a href="industries.html">Industries</a>
+            <a href="products.html">Products</a>
+            <a href="clients.html" class="nav-active">Clients</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html" class="text-brand-lime">Connect →</a>
+        </div>
+    </header>
+
+    <section class="inner-header-section container fade-up">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="stat-badge mb-4">Corporate Partners</span>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-brand-black dark:text-white">Trusted by <span class="text-brand-plum dark:text-brand-lime">Industry Leaders.</span></h1>
+            <p class="text-lg text-muted dark:text-slate-400 max-w-2xl mx-auto">Delivering high-performance Microsoft technology solutions to global enterprises, national utilities, and financial leaders since 2010.</p>
+        </div>
+    </section>
+
+    <!-- CLIENTS LOGO GRID -->
+    <section class="container pt-0">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- ABSA -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/absa_logo.gif" alt="Absa Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-2xl font-black tracking-tighter text-rose-600 dark:text-rose-400">absa</span>
+            </div>
+
+            <!-- ADCOCK INGRAM -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/Adcock%20ingram.jpg" alt="Adcock Ingram Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-2xl font-bold tracking-tight text-cyan-600 dark:text-cyan-400">adcock ingram</span>
+            </div>
+
+            <!-- ESKOM -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/ESKOM-Generation-South-Africa.jpg" alt="Eskom Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-2xl font-black tracking-tight text-blue-600 dark:text-blue-400">Eskom</span>
+            </div>
+
+            <!-- ANGLO AMERICAN -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/angloamerican_logo.jpg" alt="Anglo American Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-xl font-black tracking-widest text-slate-800 dark:text-slate-200">ANGLO AMERICAN</span>
+            </div>
+
+            <!-- ASTRAPAK -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/Astrapak.jpg" alt="Astrapak Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-2xl font-black text-purple-600 dark:text-purple-400">Astrapak</span>
+            </div>
+
+            <!-- COMAIR -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/Comair.jpg" alt="Comair Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-2xl font-black italic text-sky-600 dark:text-sky-400">COMAIR</span>
+            </div>
+
+            <!-- EOH -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/eoh_logo.png" alt="EOH Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-3xl font-extrabold tracking-tighter text-emerald-600 dark:text-emerald-400">EOH</span>
+            </div>
+
+            <!-- FAMOUS BRANDS -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/famousbrands.jpg" alt="Famous Brands Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-xl font-black tracking-tighter text-orange-600 dark:text-orange-400">Famous Brands</span>
+            </div>
+
+            <!-- REDEFINE -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/Redefine.gif" alt="Redefine Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-2xl font-extrabold tracking-tight text-red-600 dark:text-red-500">Redefine</span>
+            </div>
+
+            <!-- SUN INTERNATIONAL -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/sun-int-logo.gif" alt="Sun International Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-xl font-black text-amber-500 dark:text-amber-400">Sun International</span>
+            </div>
+
+            <!-- TELECOM SA -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/Telecomsa.jpg" alt="Telecom SA Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-2xl font-black tracking-widest text-indigo-700 dark:text-indigo-400">TELKOM</span>
+            </div>
+
+            <!-- UBUBELE -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/ubulelelogo.png" alt="Ububele Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-2xl font-black text-lime-600 dark:text-lime-400">Ububele</span>
+            </div>
+
+            <!-- AZCOM -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/Azcom.jpg" alt="Azcom Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-2xl font-bold tracking-tight text-slate-500">Azcom</span>
+            </div>
+
+            <!-- FLOW VASCULAR -->
+            <div class="bento-card glass-effect flex items-center justify-center border border-brand-plum/10 dark:border-brand-lime/10 p-8 h-40 relative group">
+                <img class="max-h-16 max-w-full object-contain mx-auto transition-transform duration-300 group-hover:scale-110" src="images/Clients/flowvacular.jpg" alt="Flow Vascular Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span class="hidden text-xl font-bold tracking-tight text-brand-plum dark:text-brand-lime">Flow Vascular</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (GLOBAL STANDARD) -->
+    <footer class="site-footer pt-20 pb-12">
+        <div class="container">
+            <div class="grid lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <img src="assets/Visual Integra Logo.jpg" alt="Visual Integra Logo" class="h-20 w-auto object-contain mb-8" />
+                    <p class="text-lg text-slate-400 max-w-sm font-medium leading-relaxed">
+                        Microsoft Technology Leader specializing in global intelligence and digital engineering for the modern enterprise.
+                    </p>
+                </div>
+                <div>
+                    <span class="footer-label mb-8 block">Navigation</span>
+                    <ul class="space-y-4 font-bold text-slate-300 text-sm">
+                        <li><a href="expertise.html">Expertise</a></li>
+                        <li><a href="aibi.html">AI-BI Solutions</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="products.html">Proprietary Stack</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="footer-label mb-8 block">Global Hubs</span>
+                    <ul class="space-y-4 font-bold text-slate-300 text-sm">
+                        <li>Johannesburg, SA</li>
+                        <li>Hyderabad, IN</li>
+                        <li>Coventry, UK</li>
+                        <li>Delaware, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-8">
+                <span class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">© 2026 Visual Integra Technologies. All Rights Reserved.</span>
+                <div class="flex gap-10 text-[11px] font-black uppercase tracking-widest text-slate-500">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

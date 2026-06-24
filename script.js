@@ -5,8 +5,9 @@ function navigateTo(pageId) {
         aibi: 'aibi.html',
         industries: 'industries.html',
         products: 'products.html',
-        about: 'agency.html',
-        contact: 'contact.html'
+        about: 'about.html',
+        contact: 'contact.html',
+        clients: 'clients.html'
     };
     if (urls[pageId]) {
         window.location.href = urls[pageId];
@@ -17,12 +18,12 @@ function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     const icon = document.getElementById('theme-icon');
-    if (!icon) return;
-    if (theme === 'dark') {
-        icon.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z" stroke-width="2.5"></path></svg>`;
-    } else {
-        icon.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-width="2.5"></path></svg>`;
-    }
+    const iconMobile = document.getElementById('theme-icon-mobile');
+    const svgDark = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z" stroke-width="2.5"></path></svg>`;
+    const svgLight = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-width="2.5"></path></svg>`;
+    
+    if (icon) icon.innerHTML = theme === 'dark' ? svgDark : svgLight;
+    if (iconMobile) iconMobile.innerHTML = theme === 'dark' ? svgDark : svgLight;
 }
 
 function toggleTheme() {
@@ -52,7 +53,7 @@ function closeModal() {
         modal.classList.add('hidden');
         document.getElementById('talent-form')?.reset();
         const fileLabel = document.getElementById('file-name');
-        if (fileLabel) fileLabel.innerText = 'Upload CV (PDF/DOCX)';
+        if (fileLabel) fileLabel.innerText = 'Upload CV or Briefing Sheet (PDF/DOCX)';
         document.getElementById('modal-form-content')?.classList.remove('hidden');
         document.getElementById('talent-success')?.classList.add('hidden');
     }, 500);
@@ -79,9 +80,15 @@ function handleTalentSubmit(e) {
     document.getElementById('talent-success')?.classList.remove('hidden');
 }
 
+function handleContactSubmit(e) {
+    e.preventDefault();
+    document.getElementById('contact-form-content')?.classList.add('hidden');
+    document.getElementById('contact-success')?.classList.remove('hidden');
+}
+
 function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
-    if (menu) menu.classList.toggle('hidden');
+    if (menu) menu.classList.toggle('active');
 }
 
 window.onscroll = () => {
@@ -105,11 +112,10 @@ window.onscroll = () => {
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     const icon = document.getElementById('theme-icon');
-    if (icon) {
-        if (savedTheme === 'dark') {
-            icon.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z" stroke-width="2.5"></path></svg>`;
-        } else {
-            icon.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-width="2.5"></path></svg>`;
-        }
-    }
+    const iconMobile = document.getElementById('theme-icon-mobile');
+    const svgDark = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z" stroke-width="2.5"></path></svg>`;
+    const svgLight = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-width="2.5"></path></svg>`;
+    
+    if (icon) icon.innerHTML = savedTheme === 'dark' ? svgDark : svgLight;
+    if (iconMobile) iconMobile.innerHTML = savedTheme === 'dark' ? svgDark : svgLight;
 });

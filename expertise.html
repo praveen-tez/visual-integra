@@ -47,15 +47,19 @@
                 <a href="aibi.html" class="nav-link">AI-BI</a>
                 <a href="industries.html" class="nav-link">Industries</a>
                 <a href="products.html" class="nav-link">Products</a>
-                <a href="agency.html" class="nav-link">Agency</a>
+                <a href="clients.html" class="nav-link">Clients</a>
+                <a href="about.html" class="nav-link">About Us</a>
                 <div class="flex items-center gap-6 border-l border-slate-200/20 pl-8 ml-4">
                     <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon"></button>
                     <button onclick="window.location.href='contact.html'" class="btn-primary !py-2.5 !px-6 !text-[10px]">Connect</button>
                 </div>
             </nav>
-            <button class="lg:hidden p-2 text-brand-black dark:text-white" onclick="toggleMobileMenu()">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
+            <div class="flex lg:hidden items-center gap-4">
+                <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon-mobile"></button>
+                <button class="p-2 text-brand-black dark:text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
         </div>
 
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white dark:bg-[#0B0F1A] h-screen p-10 flex flex-col space-y-8 text-4xl font-black text-brand-black dark:text-white lg:hidden overflow-y-auto">
@@ -63,26 +67,19 @@
             <a href="aibi.html">AI-BI</a>
             <a href="industries.html">Industries</a>
             <a href="products.html">Products</a>
-            <a href="agency.html">Agency</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html">About Us</a>
             <a href="contact.html" class="text-brand-lime">Connect →</a>
         </div>
     </header>
 
-    <section class="hero-section container fade-up">
-        <div class="grid lg:grid-cols-[1.3fr_0.7fr] gap-16 items-center">
-            <div>
-                <span class="stat-badge">Lifecycle Excellence</span>
-                <h1 class="hero-title">Surgical <br><span class="hero-title-highlight-teal">Precision.</span></h1>
-                <p class="text-body-lg mt-10 mb-12 max-w-xl">Every stage of the digital journey managed with industrialized delivery models and global 24/7 support.</p>
-                <div class="flex flex-wrap gap-8 items-center">
-                    <button onclick="openModal()" class="btn-primary">Request Talent</button>
-                    <button onclick="window.location.href='contact.html'" class="btn-tertiary">Start Brief →</button>
-                </div>
-            </div>
-            <div class="hidden lg:block relative">
-                <div class="hero-image-container">
-                    <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e78b?auto=format&fit=crop&q=80&w=1200" alt="Precision" />
-                </div>
+    <section class="inner-header-section container fade-up">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="stat-badge mb-4">Lifecycle Excellence</span>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-brand-black dark:text-white">Surgical <span class="text-brand-plum dark:text-brand-lime">Precision.</span></h1>
+            <p class="text-lg text-muted dark:text-slate-400 max-w-2xl mx-auto">Every stage of the digital journey managed with industrialized delivery models and global 24/7 support.</p>
+            <div class="mt-8 flex justify-center">
+                <button onclick="openModal()" class="btn-primary">Request Talent</button>
             </div>
         </div>
     </section>
@@ -120,11 +117,12 @@
                 <div>
                     <span class="footer-label mb-8 block">Navigation</span>
                     <ul class="space-y-4 font-bold text-slate-300 text-sm">
-                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="expertise.html">Expertise</a></li>
                         <li><a href="aibi.html">AI-BI Solutions</a></li>
-                        <li><a href="expertise.html">BI Lifecycle</a></li>
+                        <li><a href="industries.html">Industries</a></li>
                         <li><a href="products.html">Proprietary Stack</a></li>
-                        <li><a href="agency.html">Agency</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="about.html">About Us</a></li>
                     </ul>
                 </div>
                 <div>
@@ -148,37 +146,81 @@
     </footer>
 
     <!-- MODAL: REQUEST TALENT POOL -->
-    <div id="talent-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-brand-black/20 backdrop-blur-md opacity-0 transition-opacity duration-500">
-        <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-[3rem] shadow-3xl relative translate-y-10 transition-transform duration-500" id="modal-container">
-            <div class="grid lg:grid-cols-[340px_1fr] h-full overflow-y-auto">
-                <div class="bg-brand-plum p-12 text-white flex flex-col justify-between">
-                    <h3 class="text-4xl font-extrabold tracking-tighter text-white">Scale your team with precision.</h3>
+    <div id="talent-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-brand-black/60 backdrop-blur-md opacity-0 transition-opacity duration-500">
+        <div class="bg-white dark:bg-[#0B0F1A] border dark:border-slate-800 w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-[2.5rem] shadow-3xl relative translate-y-10 transition-transform duration-500" id="modal-container">
+            <div class="grid lg:grid-cols-[360px_1fr] h-full overflow-y-auto">
+                <!-- Left Banner Info -->
+                <div class="bg-gradient-to-br from-brand-plum via-brand-plum-light to-brand-lime p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black/10 z-0"></div>
+                    <div class="relative z-10 flex flex-col h-full justify-between">
+                        <div>
+                            <h3 class="text-4xl font-extrabold tracking-tighter leading-tight text-white mb-6">Scale your team with precision.</h3>
+                            <p class="text-white/80 font-medium text-sm leading-relaxed">Access Microsoft-ready engineers, data architects, and BI specialists within 24 business hours.</p>
+                        </div>
+                        <div class="mt-12 lg:mt-0 pt-6 border-t border-white/20 text-xs text-white/60 font-bold uppercase tracking-wider">
+                            Visual Integra Talent Pool
+                        </div>
+                    </div>
                 </div>
-                <div class="p-12 relative">
-                    <button onclick="closeModal()" class="absolute top-8 right-8 text-slate-300 hover:text-brand-black"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2.5"></path></svg></button>
+
+                <!-- Right Form Area -->
+                <div class="p-8 lg:p-12 relative dark:text-white">
+                    <!-- Close button -->
+                    <button onclick="closeModal()" class="absolute top-8 right-8 text-slate-400 hover:text-brand-plum dark:hover:text-brand-lime transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+
                     <div id="modal-form-content">
-                        <h4 class="text-3xl font-black tracking-tighter mb-8">Talent Briefing</h4>
+                        <h4 class="text-3xl font-black tracking-tighter mb-2 text-brand-black dark:text-white">Talent Briefing</h4>
+                        <p class="text-muted dark:text-slate-400 font-medium mb-8 text-sm">Send your brief and we will match the right technical capabilities for your model.</p>
+                        
                         <form id="talent-form" onsubmit="handleTalentSubmit(event)" class="space-y-6">
+                            <!-- Name Inputs -->
                             <div class="grid md:grid-cols-2 gap-6">
-                                <input name="firstName" required type="text" placeholder="First Name" class="w-full bg-slate-50 border-0 rounded-xl px-5 py-4 focus:ring-2 ring-brand-plum outline-none font-bold" />
-                                <input name="lastName" required type="text" placeholder="Last Name" class="w-full bg-slate-50 border-0 rounded-xl px-5 py-4 focus:ring-2 ring-brand-plum outline-none font-bold" />
-                            </div>
-                            <input name="email" required type="email" placeholder="Work Email" class="w-full bg-slate-50 border-0 rounded-xl px-5 py-4 focus:ring-2 ring-brand-plum outline-none font-bold" />
-                            <div class="relative h-32">
-                                <input name="cv" required type="file" accept=".pdf,.docx" onchange="validateFile(this)" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
-                                <div class="w-full h-full bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl flex items-center justify-center font-bold text-slate-400">
-                                    <span id="file-name">Click to upload CV (PDF/DOCX)</span>
+                                <!-- First Name -->
+                                <div class="relative flex items-center">
+                                    <div class="absolute left-4 text-slate-400">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                    </div>
+                                    <input name="firstName" required type="text" placeholder="First Name" class="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-800 rounded-xl pl-12 pr-5 py-4 focus:ring-2 focus:ring-brand-plum dark:focus:ring-brand-lime focus:border-transparent outline-none font-bold text-brand-black dark:text-white transition-all" />
+                                </div>
+                                <!-- Last Name -->
+                                <div class="relative flex items-center">
+                                    <div class="absolute left-4 text-slate-400">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                    </div>
+                                    <input name="lastName" required type="text" placeholder="Last Name" class="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-800 rounded-xl pl-12 pr-5 py-4 focus:ring-2 focus:ring-brand-plum dark:focus:ring-brand-lime focus:border-transparent outline-none font-bold text-brand-black dark:text-white transition-all" />
                                 </div>
                             </div>
-                            <button type="submit" class="btn-primary w-full">Submit Request</button>
+
+                            <!-- Email Input -->
+                            <div class="relative flex items-center">
+                                <div class="absolute left-4 text-slate-400">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                </div>
+                                <input name="email" required type="email" placeholder="Work Email" class="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-800 rounded-xl pl-12 pr-5 py-4 focus:ring-2 focus:ring-brand-plum dark:focus:ring-brand-lime focus:border-transparent outline-none font-bold text-brand-black dark:text-white transition-all" />
+                            </div>
+
+                            <!-- Upload Field -->
+                            <div class="relative group">
+                                <input name="cv" required type="file" accept=".pdf,.docx" onchange="validateFile(this)" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+                                <div class="w-full h-32 bg-slate-50 dark:bg-slate-900/30 border-2 border-dashed border-slate-200 dark:border-slate-800 hover:border-brand-plum dark:hover:border-brand-lime rounded-2xl flex flex-col items-center justify-center font-bold text-slate-400 hover:text-brand-plum dark:hover:text-brand-lime transition-all duration-300">
+                                    <svg class="w-10 h-10 mb-2 transition-transform group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                                    <span id="file-name" class="text-sm font-bold tracking-tight">Upload CV or Briefing Sheet (PDF/DOCX)</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-primary w-full justify-center !py-4 font-black tracking-widest text-sm transition-all duration-300">Submit Request</button>
                         </form>
                     </div>
-                    <div id="talent-success" class="hidden flex flex-col items-center justify-center text-center py-12">
-                        <div class="w-16 h-16 bg-brand-lime/20 text-brand-teal rounded-full flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+
+                    <!-- Success State -->
+                    <div id="talent-success" class="hidden flex flex-col items-center justify-center text-center py-16">
+                        <div class="w-20 h-20 bg-brand-lime/25 dark:bg-brand-lime/10 text-brand-teal dark:text-brand-lime rounded-full flex items-center justify-center mb-6 shadow-xl shadow-brand-lime/10">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <h4 class="text-3xl font-black tracking-tighter mb-4 text-brand-black">Briefing Received</h4>
-                        <p class="text-muted font-medium mb-8 max-w-sm">Thank you. Our Microsoft Technology alignment lead will contact you within 4 business hours.</p>
+                        <h4 class="text-3xl font-black tracking-tighter mb-4 text-brand-black dark:text-white">Briefing Received</h4>
+                        <p class="text-muted dark:text-slate-400 font-medium mb-8 max-w-sm">Thank you. Our Microsoft Technology alignment lead will contact you within 4 business hours.</p>
                         <button onclick="closeModal()" class="btn-primary">Close Window</button>
                     </div>
                 </div>

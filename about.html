@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Microsoft Technology Leader | Visual Integra</title>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: ['class', '[data-theme="dark"]'],
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            plum: 'var(--brand-plum)',
+                            'plum-light': 'var(--brand-plum-light)',
+                            teal: 'var(--brand-teal)',
+                            lime: 'var(--brand-lime)',
+                            black: 'var(--brand-black)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+    <div class="liquid-bg"></div>
+    <div id="scroll-progress" style="width: 0%"></div>
+
+    <!-- NAVIGATION -->
+    <header id="navbar" class="fixed top-0 w-full z-50 glass-effect border-b border-slate-100/10 transition-all duration-500">
+        <div class="container py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center group">
+                <img src="assets/Visual Integra Logo.jpg" alt="Visual Integra Logo" class="h-20 w-auto object-contain transition-transform group-hover:scale-105" />
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10">
+                <a href="expertise.html" class="nav-link">Expertise</a>
+                <a href="aibi.html" class="nav-link">AI-BI</a>
+                <a href="industries.html" class="nav-link">Industries</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="clients.html" class="nav-link">Clients</a>
+                <a href="about.html" class="nav-link nav-active">About Us</a>
+                <div class="flex items-center gap-6 border-l border-slate-200/20 pl-8 ml-4">
+                    <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon"></button>
+                    <button onclick="window.location.href='contact.html'" class="btn-primary !py-2.5 !px-6 !text-[10px]">Connect</button>
+                </div>
+            </nav>
+            <div class="flex lg:hidden items-center gap-4">
+                <button onclick="toggleTheme()" class="theme-toggle hover:bg-brand-plum hover:text-white" id="theme-icon-mobile"></button>
+                <button class="p-2 text-brand-black dark:text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white dark:bg-[#0B0F1A] h-screen p-10 flex flex-col space-y-8 text-4xl font-black text-brand-black dark:text-white lg:hidden overflow-y-auto">
+            <a href="expertise.html">Expertise</a>
+            <a href="aibi.html">AI-BI</a>
+            <a href="industries.html">Industries</a>
+            <a href="products.html">Products</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html" class="nav-active">About Us</a>
+            <a href="contact.html" class="text-brand-lime">Connect →</a>
+        </div>
+    </header>
+
+    <section class="inner-header-section container fade-up">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="stat-badge mb-4">14+ Year Legacy</span>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-brand-black dark:text-white">Visual Integra <span class="text-brand-plum dark:text-brand-lime">Depth.</span></h1>
+            <p class="text-lg text-muted dark:text-slate-400 max-w-2xl mx-auto">Founded in 2010 by senior consultants with a vision for industrialized digital excellence and precision engineering.</p>
+        </div>
+    </section>
+
+    <section class="container pt-0">
+        <div class="grid md:grid-cols-3 gap-10">
+            <!-- Card 1 -->
+            <div class="bento-card glass-effect border border-brand-plum/10 dark:border-brand-lime/10 p-8 hover:border-brand-plum/30 dark:hover:border-brand-lime/40 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="icon-box c-indigo !w-12 !h-12 !mb-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <span class="text-[10px] font-black tracking-widest text-slate-400 dark:text-slate-500 uppercase">Expertise Capacity</span>
+                </div>
+                <div class="text-6xl font-black bg-gradient-to-r from-brand-plum to-brand-plum-light dark:from-white dark:to-slate-300 bg-clip-text text-transparent mb-3 tracking-tighter leading-none">1,000+</div>
+                <h4 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Consulting Hours Logged</h4>
+                <p class="text-xs text-muted leading-relaxed">Enterprise consultation hours dedicated to deploying robust Microsoft BI architectures.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bento-card glass-effect border border-brand-plum/10 dark:border-brand-lime/10 p-8 hover:border-brand-plum/30 dark:hover:border-brand-lime/40 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="icon-box c-rose !w-12 !h-12 !mb-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
+                    <span class="text-[10px] font-black tracking-widest text-slate-400 dark:text-slate-500 uppercase">Global Footprint</span>
+                </div>
+                <div class="text-6xl font-black bg-gradient-to-r from-brand-teal to-emerald-600 dark:from-white dark:to-slate-300 bg-clip-text text-transparent mb-3 tracking-tighter leading-none">20+</div>
+                <h4 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Global Projects Delivered</h4>
+                <p class="text-xs text-muted leading-relaxed">Systems integration frameworks successfully deployed for multinational organizations worldwide.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bento-card glass-effect border border-brand-plum/10 dark:border-brand-lime/10 p-8 hover:border-brand-plum/30 dark:hover:border-brand-lime/40 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="icon-box c-lime !w-12 !h-12 !mb-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <span class="text-[10px] font-black tracking-widest text-slate-400 dark:text-slate-500 uppercase">Legacy Track</span>
+                </div>
+                <div class="text-6xl font-black bg-gradient-to-r from-brand-lime via-[#9abf2d] to-brand-teal dark:from-white dark:to-slate-300 bg-clip-text text-transparent mb-3 tracking-tighter leading-none">2010</div>
+                <h4 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Year of Inception</h4>
+                <p class="text-xs text-muted leading-relaxed">Delivering highly responsive technology systems integration since our corporate founding.</p>
+            </div>
+        </div>
+
+        <!-- INTRODUCTION SECTION -->
+        <div class="mt-28 max-w-4xl mx-auto">
+            <span class="stat-badge mb-6">Our Story</span>
+            <h2 class="text-3xl md:text-5xl font-black mb-8 text-brand-black dark:text-white leading-tight">Microsoft Technology Leadership Since 2010</h2>
+            <div class="grid md:grid-cols-2 gap-12 text-muted dark:text-slate-400 font-medium leading-relaxed text-lg">
+                <div>
+                    <p class="mb-6"><strong class="text-brand-plum dark:text-brand-lime">Visual Integra Technologies</strong> began in 2010 when a group of consultants formed "Visual Integra". As a privately held corporation, VI Technologies is a Microsoft Technology Leader in Business Intelligence, Integration, and Application Development.</p>
+                </div>
+                <div>
+                    <p>Our managers and functional consultants are deeply skilled in Microsoft functionality and business processes. We assist clients through requirements, configuration, testing, go-live, and support for Microsoft Business Intelligence, Point of Sales, E-Commerce, Mobile Application Development, and Customer Relationship Management.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CORE MISSION PILLARS -->
+        <div class="mt-28">
+            <div class="max-w-2xl mb-16">
+                <span class="stat-badge mb-4">Value Pillars</span>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6 text-brand-black dark:text-white">Our Mission</h2>
+                <p class="text-lg text-muted dark:text-slate-400 font-medium">We are dedicated to providing the services and solutions our clients need to meet their information technology challenges and business goals through four key action tracks:</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Pillar 1 -->
+                <div class="bento-card glass-effect flex flex-col border border-brand-plum/10 dark:border-brand-lime/10 p-8 hover:border-brand-plum/30 dark:hover:border-brand-lime/40 transition-all duration-300 group">
+                    <div class="icon-box c-indigo !w-14 !h-14">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-black tracking-tight text-brand-black dark:text-white mb-3">Client Needs</h4>
+                    <p class="text-sm text-muted dark:text-slate-400 font-medium mt-auto">Understand the needs of our clients completely before proposing a solutions roadmap.</p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bento-card glass-effect flex flex-col border border-brand-plum/10 dark:border-brand-lime/10 p-8 hover:border-brand-plum/30 dark:hover:border-brand-lime/40 transition-all duration-300 group">
+                    <div class="icon-box c-rose !w-14 !h-14">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-black tracking-tight text-brand-black dark:text-white mb-3">Cost Efficiency</h4>
+                    <p class="text-sm text-muted dark:text-slate-400 font-medium mt-auto">Develop responsive proposals that provide cost-effective and highly optimized solutions.</p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bento-card glass-effect flex flex-col border border-brand-plum/10 dark:border-brand-lime/10 p-8 hover:border-brand-plum/30 dark:hover:border-brand-lime/40 transition-all duration-300 group">
+                    <div class="icon-box c-amber !w-14 !h-14">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-black tracking-tight text-brand-black dark:text-white mb-3">Optimal Deployment</h4>
+                    <p class="text-sm text-muted dark:text-slate-400 font-medium mt-auto">Deploy the right mix of people and products to deliver value-added consulting services.</p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="bento-card glass-effect flex flex-col border border-brand-plum/10 dark:border-brand-lime/10 p-8 hover:border-brand-plum/30 dark:hover:border-brand-lime/40 transition-all duration-300 group">
+                    <div class="icon-box c-emerald !w-14 !h-14">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-black tracking-tight text-brand-black dark:text-white mb-3">Quality Audit</h4>
+                    <p class="text-sm text-muted dark:text-slate-400 font-medium mt-auto">Conduct post-implementation quality follow-ups on our services and solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (GLOBAL STANDARD) -->
+    <footer class="site-footer pt-20 pb-12">
+        <div class="container">
+            <div class="grid lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <img src="assets/Visual Integra Logo.jpg" alt="Visual Integra Logo" class="h-20 w-auto object-contain mb-8" />
+                    <p class="text-lg text-slate-400 max-w-sm font-medium leading-relaxed">
+                        Microsoft Technology Leader specializing in global intelligence and digital engineering for the modern enterprise.
+                    </p>
+                </div>
+                <div>
+                    <span class="footer-label mb-8 block">Navigation</span>
+                    <ul class="space-y-4 font-bold text-slate-300 text-sm">
+                        <li><a href="expertise.html">Expertise</a></li>
+                        <li><a href="aibi.html">AI-BI Solutions</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="products.html">Proprietary Stack</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="footer-label mb-8 block">Global Hubs</span>
+                    <ul class="space-y-4 font-bold text-slate-300 text-sm">
+                        <li>Johannesburg, SA</li>
+                        <li>Hyderabad, IN</li>
+                        <li>Coventry, UK</li>
+                        <li>Delaware, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-8">
+                <span class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">© 2026 Visual Integra Technologies. All Rights Reserved.</span>
+                <div class="flex gap-10 text-[11px] font-black uppercase tracking-widest text-slate-500">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

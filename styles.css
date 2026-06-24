@@ -23,6 +23,9 @@
     /* Override primary brand plum with neon lime in dark theme */
     --brand-plum: #A4C639;
     --brand-plum-light: #b6d747;
+    
+    /* Override dark teal with a bright, high-contrast teal in dark theme */
+    --brand-teal: #76beaa;
 }
 
 [data-theme="dark"] .btn-primary {
@@ -71,19 +74,19 @@ body {
 }
 
 h1 { 
-    font-size: clamp(3.25rem, 10vw, 5.5rem); 
-    line-height: 1.1; 
+    font-size: clamp(2.5rem, 5vw, 3.85rem); 
+    line-height: 1.15; 
     font-weight: 900; 
-    letter-spacing: -0.05em; 
+    letter-spacing: -0.04em; 
     color: var(--text-main);
     margin-bottom: 2rem;
 }
 
 .hero-title {
-    font-size: clamp(3.5rem, 9.5vw, 6.2rem);
-    line-height: 1.05;
+    font-size: clamp(2.75rem, 6.5vw, 4.35rem);
+    line-height: 1.1;
     font-weight: 900;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.05em;
     margin-bottom: 2.5rem;
 }
 
@@ -160,6 +163,7 @@ h1 {
 .text-brand-teal { color: var(--brand-teal) !important; }
 .text-brand-lime { color: var(--brand-lime) !important; }
 .text-brand-black { color: var(--brand-black) !important; }
+[data-theme="dark"] .text-brand-black:not(.bg-brand-lime) { color: var(--text-main) !important; }
 .bg-brand-lime { background-color: var(--brand-lime) !important; }
 .hover\:bg-brand-plum:hover { background-color: var(--brand-plum) !important; }
 .hover\:text-brand-plum:hover { color: var(--brand-plum) !important; }
@@ -215,6 +219,10 @@ h3 { font-size: 1.75rem; line-height: 1.1; font-weight: 800; letter-spacing: -0.
     align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, color 0.4s ease;
+}
+.bento-card:hover .icon-box {
+    transform: translateY(-6px) scale(1.08);
 }
 
 /* Vibrant Colors */
@@ -239,16 +247,31 @@ h3 { font-size: 1.75rem; line-height: 1.1; font-weight: 800; letter-spacing: -0.
 
 section { padding-block: var(--section-spacing); }
 .hero-section { padding-top: 10rem; padding-bottom: 4rem; min-height: 80vh; display: flex; align-items: center; }
+.inner-header-section { padding-top: 8rem; padding-bottom: 2.5rem; text-align: center; }
 
 .hero-image-container {
     width: 100%;
-    height: 500px;
-    border-radius: 3rem;
+    height: 320px;
+    border-radius: 2rem;
     overflow: hidden;
-    box-shadow: 0 50px 100px -20px rgba(0,0,0,0.15);
+    box-shadow: 0 30px 60px -15px rgba(0,0,0,0.1);
     border: 1px solid var(--border-glass);
+    transition: all 0.5s ease;
 }
 .hero-image-container img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (min-width: 640px) {
+    .hero-image-container {
+        height: 400px;
+    }
+}
+@media (min-width: 1024px) {
+    .hero-image-container {
+        height: 500px;
+        border-radius: 3rem;
+        box-shadow: 0 50px 100px -20px rgba(0,0,0,0.15);
+    }
+}
 
 /* Enhanced Footer */
 .site-footer {
@@ -342,4 +365,51 @@ section { padding-block: var(--section-spacing); }
 .btn-primary:active, .btn-secondary:active, .btn-tertiary:active {
     transform: scale(0.97);
 }
+
+/* Mobile Menu Smooth Transition Override */
+#mobile-menu {
+    display: flex !important;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+    opacity: 0;
+    transform: translateY(-12px);
+    visibility: hidden;
+    pointer-events: none;
+}
+#mobile-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Capability Banner Premium Shadows */
+.capability-banner {
+    box-shadow: 0 25px 60px -15px rgba(81, 45, 85, 0.06), 0 15px 30px -10px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+[data-theme="dark"] .capability-banner {
+    box-shadow: 0 30px 60px -15px rgba(164, 198, 57, 0.1), 0 0 45px -10px rgba(164, 198, 57, 0.05);
+}
+
+/* Custom Scroll Progress Bar Style */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--brand-plum), var(--brand-lime));
+    z-index: 1000;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 10px rgba(164, 198, 57, 0.4);
+}
+
+/* Timeline Stepper Node Styles */
+.timeline-node {
+    position: relative;
+    transition: all 0.3s ease;
+}
+.group:hover .timeline-node {
+    transform: scale(1.05);
+}
+
 
